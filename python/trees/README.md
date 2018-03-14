@@ -48,15 +48,24 @@ Example recursive search function of a BST
 
 ```
 def search (self, v):
+
+	# Check if we found the value. If so, return True
 	if self.value == v:
 		return True
 
+	# Check if the search value is less-than the current value.
+	# If yes and we have a left child, then search the left child for the specified value.
 	if self.value < v and self.left is not None:
-		return self.search(v.left)
+		return self.search(self.left, v)
 
+	# Check if the search value is greater-than the current value.
+	# If yes and we have a right child, then search the right child for the specified value.
 	elif self.value > v and self.right is not None:
-		return self.search(v.right)
+		return self.search(self.right, v)
 
+	# Since we ran out of values to search through
+	# the value must not exist in the BST.
+	# Thus, we return False
 	else:
 		return False
 ```
