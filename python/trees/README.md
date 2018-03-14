@@ -73,7 +73,7 @@ def search (self, v):
 	elif self.value > v and self.right is not None:
 		return self.search(self.right, v)
 
-	# Since we ran out of values to search through
+	# Since we ran out of nodes/values to search through
 	# the value must not exist in the BST.
 	# Thus, we return False
 	else:
@@ -81,3 +81,43 @@ def search (self, v):
 ```
 
 This recursive search function will at-most visit any node once, meaning the worst cast run-time of this function is **O(n)**.
+
+**Inserting**
+
+Inserting a value into a BST is, at it's core, a search operation to find the proper location in which to place the specified value. Being that the insert function is based on the search function, the run-time is on average the same as search, meaning **O(log n)**.
+
+Example insert function for a BST with right-side bias for values that are equal to the root's value
+
+```
+def insert (self, v):
+	
+	# Check if root's value is less-than or equal-to the specified value
+	if self.value == v or self.value < v:
+
+		# If the right child is None, then we found the location we want to insert the value to
+		# Set the right child equal to a new BSTNode with value v
+		if self.right is None:
+			self.right = BSTNode(v)
+
+		# If the right child is not None, then we need to keep searching
+		# Recursively call insert on the right child in order to find the proper location
+		# as we know the proper location must be to the right
+		else:
+			self.insert(self.right, v)
+
+	# At this point, we know the value of v is less than the root's value
+	else:
+		# If the left child is None, then we found the location we want to insert the value to
+		# Set the left child equal to a new BSTNode with value v
+		if self.left is None:
+			self.left = BSTNode(v)
+
+		# If the left child is not None, then we need to keep searching
+		# Recursively call insert on the left child in order to find the proper location
+		# as we know the proper location must be to the left
+		else:
+			self.insert(self.left, v)
+
+```
+
+This recursive insert functions works by traversing the tree looking for the first location that maintains the BST property stated above, and inserts the value at that location.
