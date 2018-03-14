@@ -22,15 +22,10 @@ class Node:
 
 A binary search tree (BST) is a specialized binary tree in which each node has an integer value. The value of parent node is greater than or equal to the values of all of its left-side children and the value of the parent node is less than or equal to the value of all of its right-side children.
 
-Basic definition and function outlines for a BST Node in python
+Basic definition and function outlines for a BST Node in python that inherits from the `Node` class that was defined above.
 
 ```
-class BSTNode:
-	# Constructor of a binary search tree node
-	def __init__ (self, v, l, r):
-		self.value = v
-		self.left = l
-		self.right = r
+class BSTNode (Node):
 
 	# Inserts value into BST
 	def insert (self, v):
