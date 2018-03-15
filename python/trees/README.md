@@ -32,7 +32,7 @@ Example BST
 
 ```
 
-Basic definition and function outlines for a BST Node in python that inherits from the `Node` class that was defined above.
+Basic definition and required function outlines for a BST Node in python that inherits from the `Node` class that was defined above.
 
 ```
 class BSTNode (Node):
@@ -41,8 +41,8 @@ class BSTNode (Node):
 	def insert (self, v):
 		pass
 
-	# Removes value from BST
-	def remove (self, v):
+	# delete value from BST
+	def delete (self, v):
 		pass
 
 	# Searches BST for a specified value
@@ -50,7 +50,7 @@ class BSTNode (Node):
 		pass
 ```
 
-**Searching**
+**Search**
 
 Searching a BST for a specified value on average takes **O(log n)** time, where n is the number of nodes in the BST. This performance is due to the specialized nature of a BST that was outlined above. 
 
@@ -82,7 +82,7 @@ def search (self, v):
 
 This recursive search function will at-most visit any node once, meaning the worst cast run-time of this function is **O(n)**.
 
-**Inserting**
+**Insertion**
 
 Inserting a value into a BST is, at it's core, a search operation to find the proper location in which to place the specified value. Being that the insert function is based on the search function, the run-time is on average the same as search, meaning **O(log n)**.
 
@@ -121,3 +121,10 @@ def insert (self, v):
 ```
 
 This recursive insert functions works by traversing the tree looking for the first location that maintains the BST property stated above, and inserts the value at that location.
+
+**Deletion**
+
+```
+def delete (self, v):
+	pass
+```
