@@ -26,7 +26,7 @@ Using the master method, we can easily determine the asymptotic bounds on the so
 Following the form, **T(n) = a * T(n/b) + f(n)** we can quickly determine that a = 2 because we create 2 subproblems, b = 2 as the subproblems are 1/2 the size of the original problems, and f(n) equals O(n) because the combine step takes n time. Thus we get the below recurrence
 
 
-**T(n)** = {**O(1)**            if n = 1,
+**T(n)** = {**O(1)**            if n = 1,</br>
             **2T(n/2) + O(n)**  if n > 1}
 
 
