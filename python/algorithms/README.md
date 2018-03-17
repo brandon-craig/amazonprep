@@ -32,6 +32,3 @@ Following the form, **T(n) = a * T(n/b) + f(n)** we can quickly determine that a
 
 ### Maximum-subarray problem
 
-
-
-
